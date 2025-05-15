@@ -19,3 +19,7 @@ pip install -r requirements.txt
 
 echo "✅ [4/5] Verifying GPU..."
 python3 -c "import torch; print('GPU available:', torch.cuda.is_available())"
+
+# chmod +x setup.sh
+# ./setup.sh
+
