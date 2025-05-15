@@ -1,4 +1,4 @@
-from langchain_huggingface import HuggingFaceEndpoint
+from langchain_huggingface import HuggingFaceEndpoint, HuggingFacePipeline
 from dotenv import load_dotenv
 import warnings
 
