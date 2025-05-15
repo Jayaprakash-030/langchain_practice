@@ -22,4 +22,3 @@ python3 -c "import torch; print('GPU available:', torch.cuda.is_available())"
 
 # chmod +x setup.sh
 # ./setup.sh
-
