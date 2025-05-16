@@ -1,17 +1,24 @@
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_huggingface import HuggingFacePipeline
-from transformers import pipeline
-from dotenv import load_dotenv
+# from langchain.llms import HuggingFacePipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+import torch
 
-load_dotenv()
+model_id = "mistralai/Mistral-7B-Instruct-v0.3"
 
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.float16,
+    device_map="auto",
+)
 
 pipe = pipeline(
     "text-generation",
-    model="tiiuae/falcon-rw-1b",
-    tokenizer="tiiuae/falcon-rw-1b",
-    max_new_tokens=64,
+    model=model,
+    tokenizer=tokenizer,
     temperature=0.2,
+    max_new_tokens=512,
     top_p=0.95,
     do_sample=True,
 )
@@ -28,3 +35,8 @@ result = llm.invoke(messages)
 messages.append(AIMessage(content=result))
 
 print(messages)
+
+
+
+
+
