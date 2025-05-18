@@ -42,3 +42,4 @@ echo "💡 Also go to Cmd+Shift+P → 'Python: Select Interpreter' and choose: /
 
 # chmod +x setup.sh
 # ./setup.sh
+# huggingface-cli login

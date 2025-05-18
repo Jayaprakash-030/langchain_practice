@@ -28,3 +28,6 @@ scikit-learn
 #parsing
 pydantic
 pydantic[email]
+
+#visualization
+grandalf
