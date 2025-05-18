@@ -34,7 +34,7 @@ prompt = PromptTemplate(
 )
 
 prompt2 = PromptTemplate(
-    template='PLease give 3 quiz questions for the below text and also give the detailed answer for them as well \n {text}',
+    template='Please give 3 quiz questions for the below text and also give the detailed answer for them as well \n {text}',
     input_variables=['text']
 )
 
