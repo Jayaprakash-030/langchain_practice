@@ -60,7 +60,7 @@ feedback = "S24 ultra is a good phone"
 chain = prompt | llm | parser2
 
 branch_chain = RunnableBranch(
-    (RunnableLambda(lambda x : x.sentiment == 'positive') , prompt1 | llm | parser),
+    (RunnableLambda(lambda x : x.sentiment == 'positive') , prompt1 | llm | parser), # pydantic object is received as input so we access it's key by .
     (RunnableLambda(lambda x : x.sentiment == 'negative'), prompt2 | llm | parser),
     RunnablePassthrough(lambda x : "could not find the sentiment")
 )
