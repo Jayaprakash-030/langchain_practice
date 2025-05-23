@@ -25,12 +25,14 @@ else:
 
 """
 
-splitter = RecursiveCharacterTextSplitter(
-    chunk_size=400,
+splitter = RecursiveCharacterTextSplitter.from_language(
+    chunk_size=300,
     chunk_overlap=0,
     language=Language.PYTHON
 )
 
 chunks = splitter.split_text(text)
+
+print(len(chunks))
 
 print(chunks)
