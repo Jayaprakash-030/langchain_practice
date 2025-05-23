@@ -32,3 +32,6 @@ pydantic[email]
 
 #visualization
 grandalf
+
+#documentloader
+pypdf
