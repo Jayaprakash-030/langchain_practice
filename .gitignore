@@ -1,3 +1,4 @@
 .env
 models/.env
 .vscode
+.DS_Store
